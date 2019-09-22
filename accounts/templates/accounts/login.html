@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Log in</h1>
+<form class="site-form" action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %} {{ form|crispy }} {% if request.GET.next %}
+    
+    	<input type="hidden" class="form-control" name="next" value="{{ request.GET.next }}" /> {% endif %}
+	
+	
+    	<input type="submit" class="btn btn-primary" value="Login" />
+	
+</form>
+
+<p class="padding">Not got an account?  
+    <a href="{% url 'accounts:signup' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Signup</a>
+</p>
+
+
+{% endblock %}

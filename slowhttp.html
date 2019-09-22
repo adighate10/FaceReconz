@@ -1,0 +1,103 @@
+<!-- SlowHTTPTest Analysis chart (c) Sergey Shekyan, Victor Agababov 2011  -->
+ <html>
+   <head>
+   <style>
+     body { font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; background-color: transparent; color: #333; -webkit-font-smoothing: antialiased; } 
+     .slow_results {font-size: 12px; } 
+     </style>
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+       google.load("visualization", "1", {packages:["corechart"]});
+       google.setOnLoadCallback(drawChart);
+       function drawChart() {
+         var data = new google.visualization.DataTable();
+         data.addColumn('string', 'Seconds');
+         data.addColumn('number', 'Closed');
+         data.addColumn('number', 'Pending');
+         data.addColumn('number', 'Connected');
+         data.addColumn('number', 'Service available');
+         data.addRows([
+['0',0,1,0,4090],
+['1',0,1,134,4090],
+['2',0,1,269,4090],
+['3',0,1,399,4090],
+['4',0,1,528,4090],
+['5',0,1,655,4090],
+['6',0,1,784,4090],
+['7',0,4,914,4090],
+['8',0,22,1029,4090],
+['9',0,194,1029,4090],
+['10',0,365,1029,4090],
+['11',0,533,1029,4090],
+['12',0,703,1029,0],
+['13',0,870,1029,0],
+['14',0,1040,1029,0],
+['15',0,1209,1029,0],
+['16',0,1375,1029,0],
+['17',0,1540,1029,0],
+['18',0,1698,1029,0],
+['19',0,1840,1029,0],
+['20',0,1975,1030,0],
+['21',0,2120,1030,0],
+['22',0,2267,1030,0],
+['23',0,2411,1030,0],
+['24',0,2557,1030,0],
+['25',0,2702,1030,0],
+['26',0,2845,1030,0],
+['27',0,2989,1030,0],
+['28',0,3060,1030,0],
+['29',0,3060,1030,0],
+['30',0,3060,1030,0],
+['31',0,3060,1030,0],
+['32',0,3060,1030,0],
+['33',0,3060,1030,0],
+['34',0,3060,1030,0],
+['35',0,3060,1030,0],
+['36',0,3060,1030,0],
+['37',0,3060,1030,0],
+['38',0,3060,1030,0],
+['39',0,3060,1030,0],
+['40',0,3060,1030,0],
+['41',0,3060,1030,0],
+['42',0,3060,1030,0],
+['43',0,3060,1030,0],
+['44',0,3060,1030,0],
+['45',0,3060,1030,0],
+['46',0,3060,1030,0],
+['47',0,3060,1030,0],
+['48',0,3060,1030,0],
+['49',0,3060,1030,0],
+['50',0,3060,1030,0],
+['51',0,3060,1030,0],
+['52',0,3060,1030,0],
+['53',0,3060,1030,0],
+['54',0,3060,1030,0],
+['55',0,3060,1030,0],
+['56',0,3060,1030,0],
+['57',0,3060,1030,0],
+['58',0,3060,1030,0],
+['59',0,3060,1030,0],
+['60',0,3060,1030,0],
+['61',0,3060,1030,0],
+['62',0,3060,1030,0],
+['63',0,3060,1030,0],
+['64',0,3060,1030,0],
+['65',0,3060,1030,0],
+['66',0,3060,1030,0],
+['67',0,3060,1030,0],
+['68',0,3060,1030,0],
+['69',0,3060,1030,0],
+        ]);
+         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+         chart.draw(data, {'width': 600, 'height': 360, 'title': 'Test results against http://127.0.0.1:8000/',         hAxis: {'title': 'Seconds', 'titleTextStyle': {color: '#FF0000'}},
+         vAxis: {'title': 'Connections', 'titleTextStyle': {color: '#FF0000'}, 'viewWindowMode':'maximized'}
+     });
+     }
+     </script>
+     <title>SlowHTTPTest(tm) Connection Results</title>
+   </head>
+   <body>
+   <p><table class='slow_results' border='0'><tr><th>Test parameters</th></tr><tr><td><b>Test type</b></td><td>SLOW HEADERS</td></tr><tr><td><b>Number of connections</b></td><td>4090</td></tr><tr><td><b>Verb</b></td><td>GET</td></tr><tr><td><b>Content-Length header value</b></td><td>4096</td></tr><tr><td><b>Extra data max length</b></td><td>52</td></tr><tr><td><b>Interval between follow up data</b></td><td>10 seconds</td></tr><tr><td><b>Connections per seconds</b></td><td>200</td></tr><tr><td><b>Timeout for probe connection</b></td><td>3</td></tr><tr><td><b>Target test duration</b></td><td>240 seconds</td></tr><tr><td><b>Using proxy</b></td><td>no proxy  </td></tr></table></p>
+     <div id="chart_div"></div>
+   </body>
+ </html>
